@@ -1,0 +1,53 @@
+body{
+    background-color: black;
+}
+h1{
+    text-align: center;
+    font-family: Algerian, sans-serif;
+    color: white;
+}
+#title{
+    text-align: center;
+}
+.poster {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto; 
+  }
+.main-container{
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 49%;
+    list-style: none;
+}
+#list-container{
+    justify-content: space-between;
+}
+
+.container1, .container2 {
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: dimgrey;
+  }
+  
+.container2 img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
+  }
+  .card-body{
+    border: 3px solid white;
+    background-color: gold;
+  }
+  #movieDetails{
+    background-color: bisque;
+  }
+  #btn{
+    width: 670px;
+    background-color:beige;
+  }
