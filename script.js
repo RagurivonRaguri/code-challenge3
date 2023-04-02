@@ -9,6 +9,7 @@ function movieList(films) {
     movie.innerHTML = `
       <div class="card-body">
         <h2>${film.title}</h2>
+        <p><p>
       </div>
     `;
     listOfMovies.appendChild(movie);
@@ -55,6 +56,9 @@ function movieList(films) {
        .then(res => res.json())
         } else {
            alert('Sorry, Fully Booked');
+           const soldOut = movie.querySelector('p');
+           soldOut.textContent=`Sold Out!`
+           movie.appendChild(soldOut);
         }
      }); 
     });
