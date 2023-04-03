@@ -41,7 +41,7 @@ function movieList(films) {
          button.addEventListener('click', () => {
            if (film.tickets_sold < film.capacity) {
            film.tickets_sold += 1;
-           const soldTickets = movieCard.querySelector('#movieDetails p:nth-of-type(2)');
+           const soldTickets = movieCard.querySelector('#movieDetails p:nth-of-type(5)');
            soldTickets.textContent = `Tickets sold: ${film.tickets_sold}`;
 
            const remainingTickets = document.createElement('p');
