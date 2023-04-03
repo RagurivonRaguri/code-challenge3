@@ -1,9 +1,15 @@
 # code-challenge3
 # Flatdango Movie House
-The deliverables are related to a movie ticket booking application. As a user of this application, I can see movie details of the first movie such as its poster, title, runtime, showtime, and available tickets when the page loads. The number of tickets available is calculated by subtracting the number of tickets sold from the total capacity of the theater. To retrieve the film data, a GET request needs to be made to the endpoint '/films/1'. The example response given shows the JSON format of the data retrieved.
+This is a JavaScript code that retrieves data from a local server using the fetch API and then creates a movie list on a webpage. The code starts with a fetch request to retrieve data from the URL http://localhost:3000/films.
 
-Additionally, I can also see a menu of all movies on the left side of the page in the 'ul#films' element when the page loads. This list can be styled by adding the classes 'film item' to each 'li' element. There is a hardcoded placeholder 'li' element in the 'ul#films' element, which can be removed using JavaScript or directly editing the HTML file. To retrieve film data for this list, a GET request to the endpoint '/films' needs to be made. The example response shows an array of JSON objects containing movie details for each movie.
+The then() method is used to handle the response from the server in JSON format. The retrieved data is passed to the movieList() function, which creates a list of movies on the webpage.
 
-Lastly, as a user, I can buy a ticket for a movie by clicking the 'Buy Ticket' button. Upon clicking, the number of available tickets should decrease on the frontend. However, if there are no available tickets for the show, I should not be able to buy a ticket. This ensures that tickets are not oversold, and users do not face any inconvenience.
+Inside the movieList() function, a forEach() method is used to loop through each film object in the films array. A new li element is created for each film, and the title of the film is inserted into the h2 element inside the li element.
+
+An event listener is added to each movie element to listen for a click event. When the user clicks on a movie, a new li element is created with an id attribute equal to the id of the film object. The new li element contains a movie card with details such as the title, poster, runtime, showtime, description, capacity, and tickets sold.
+
+A Buy Ticket button is also included in the movie card, which is associated with an event listener to check if there are available tickets. If there are available tickets, the number of sold tickets is incremented by one, and the details of the remaining tickets are updated. The data is also updated on the server using a PATCH request.
+
+If there are no available tickets, an alert message is displayed, and the Sold Out message is added to the movie element. The code ends with the closing of the event listeners and the loops.
 # Author:Lincoln Muraguri
 # year[2023] author[L.M.M]

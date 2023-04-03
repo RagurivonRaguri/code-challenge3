@@ -1,7 +1,7 @@
 fetch('http://localhost:3000/films')
   .then(res => res.json())
   .then(data => movieList(data));
-
+// I created a function that creates a movie list,moviecard and buy tickets button
 function movieList(films) {
   const listOfMovies = document.querySelector('#list-container');
   films.forEach(film => {
@@ -11,10 +11,10 @@ function movieList(films) {
         <h2>${film.title}</h2>
         <p><p>
       </div>
-    `;
-    listOfMovies.appendChild(movie);
+      `;
+      listOfMovies.appendChild(movie);
 
-    movie.addEventListener('click', e => {
+      movie.addEventListener('click', e => {
       e.preventDefault();
 
       const movieContainer = document.querySelector('#movie-container');
@@ -45,6 +45,7 @@ function movieList(films) {
            soldTickets.textContent = `Tickets sold: ${film.tickets_sold}`;
 
            const remainingTickets = document.createElement('p');
+           remainingTickets.setAttribute('id','remainder');
           remainingTickets.textContent = `Remaining tickets: ${film.capacity - film.tickets_sold}`;
             movieCard.querySelector('#movieDetails').appendChild(remainingTickets);
 
